@@ -1,0 +1,39 @@
+{
+  "name": "docker.ts",
+  "version": "1.0.0",
+  "description": "A little Docker TypeScript CLI by Piarre.",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "execa": "^6.1.0",
+    "fs": "^0.0.1-security",
+    "fs-extra": "^10.0.1",
+    "git-init": "^1.0.0",
+    "inquirer": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.19",
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "build": "tsc -b && npm i -g .",
+    "start": "tsc -b && npm i -g . && docts"
+  },
+  "files": [
+    "src/",
+    "templates/"
+  ],
+  "keywords": [
+    "CLI",
+    "Docker",
+    "TypeScript",
+    "JavaScript",
+    "Redis"
+  ],
+  "author": "Piarre",
+  "license": "ISC",
+  "bin": {
+    "docts": "dist/index.js"
+  }
+}
