@@ -1,15 +1,17 @@
 {
-  "name": "docker.ts",
+  "name": "@piarre/docr.ts",
   "version": "1.0.0",
   "description": "A little Docker TypeScript CLI by Piarre.",
   "main": "src/index.js",
   "type": "commonjs",
+  "publishConfig": {
+    "access": "public",
+    "@piarre:registry": "https://npm.pkg.github.com",
+    "@piarre:registry": "https://registry.npmjs.org/"
+  },
   "dependencies": {
-    "chalk": "^5.0.0",
-    "execa": "^6.1.0",
     "fs": "^0.0.1-security",
     "fs-extra": "^10.0.1",
-    "git-init": "^1.0.0",
     "inquirer": "^8.2.0"
   },
   "devDependencies": {
@@ -22,7 +24,7 @@
   },
   "files": [
     "src/",
-    "templates/"
+    "dist/"
   ],
   "keywords": [
     "CLI",
@@ -31,6 +33,14 @@
     "JavaScript",
     "Redis"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Piarre/DockerTS"
+  },
+  "bugs": {
+    "url": "https://github.com/Piarre/DockerTS/issues"
+  },
+  "homepage": "https://github.com/Piarre/DockerTS#readme",
   "author": "Piarre",
   "license": "ISC",
   "bin": {
