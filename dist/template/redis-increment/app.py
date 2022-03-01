@@ -12,15 +12,18 @@ app = Flask(__name__)
 def hello():
     try:
         # Increment on visit
-        visites = redis.incr("increment")
-        # If Redis has errorr
+        visits = redis.incr("counter")
+        # Handle Redis error
     except RedisError:
-        visites = "<i>Error while connect to Redis, increment unaible</i>"
+        visits = "<i>Error with Redis, counter disaible</i>"
 
+    # Render the html page
     html = "<h3>Hello {name}!</h3>" \
-           "<b>Hostname :</b> {hostname}<br/>" \
-           "<b>Visites :</b> {increment} <br/>" \
-    return html.format(nom=os.getenv("NOM", "youtube"), hostname=socket.gethostname(), increment=increment)
+           "<b>Hostname:</b> {hostname}<br/>" \
+           "<b>Visit(s): </b> {counter} <br/>" \
+           "<p>https://github.com/Piarre!</p>"
+    # Return variable
+    return html.format(name=os.getenv("NOM", "youtube"), hostname=socket.gethostname(), visites=visites)
 
 # Run server on localhost
 if __name__ == "__main__":

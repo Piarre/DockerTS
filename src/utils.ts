@@ -5,6 +5,7 @@ const git = require('git-init');
 export class Utils {
 
    /** 
+    * @public
     * @param {String} projectName
     * @param {String} templateName 
     */
@@ -38,13 +39,4 @@ export class Utils {
    private sayDone() {
       console.log(`\x1b[42m\x1b[30mDONE\x1b[0m Project created`)
    }
-
-   public async initGit() {
-      git('./', (err) => {
-         if (err) throw err
-       })
-      return;
-   }
-    
-
 }

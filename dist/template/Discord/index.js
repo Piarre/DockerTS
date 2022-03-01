@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 const Client = new Discord.Client();
 
 // * Local import
-const { TOKEN } = require('./client.json');
 const clear = require('./commands/clear');
 const kickAndBan = require('./commands/kickAndBan');
 
@@ -12,7 +11,7 @@ Client.on('ready', async () => {
     setInterval(() => {
 
         // ? Get the number of online user(s).
-        const allMember = Client.guilds.cache.get("YOUR SERVER ID");
+        const allMember = Client.guilds.cache.get(process.env.SERVERID);
         // ? Set a variable
         const memberCount = allMember.members.cache.filter(member => member.presence.status !== "offline").size;
         
@@ -34,4 +33,4 @@ Client.on('ready', async () => {
 });
 
 // * Login with the bot's credential.
-Client.login(TOKEN);
+Client.login(process.env.TOKEN);

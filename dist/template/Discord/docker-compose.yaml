@@ -2,7 +2,11 @@
 version: '3'
 # Our containers
 services:
- # Define our didockerize container
+ # Define our "didockerize" container
   didockerize:
     # Use our image build previously
     image: didockerize:latest
+    environment:
+      - TOKEN=YOUR_BOT_TOKEN
+      - SERVERID=YOUR_SERVER_ID
+      - PREFIX=!

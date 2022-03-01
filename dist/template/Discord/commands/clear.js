@@ -14,7 +14,7 @@ module.exports = (client) => {
                 const embed = new MessageEmbed()
                     .setColor('#00FF00')
                     .setTitle('Clear')
-                    .setDescription(`The channel : ${message.channel.name} has been clear !`)
+                    .setDescription(`Channel, ${message.channel.name} has been cleared !`)
                     .setTimestamp()
                     message.channel.send(embed)
             })
